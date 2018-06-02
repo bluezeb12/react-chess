@@ -1,0 +1,64 @@
+board: {
+    turn: playerOne,
+    currentLayout: [
+        {
+            player: "white",
+            location: ["A", 5],
+            type: "king",
+            hasMoved: false,
+        },
+        {
+            player: "white",
+            location: ["A", 2],
+            type: "knight",
+            hasMoved: false,
+        },
+        {
+            player: "white",
+            location: ["A", 7],
+            type: "knight",
+            hasMoved: false,
+        },
+        {
+            player: "black",
+            location: ["H", 5],
+            type: "king",
+            hasMoved: false,
+        },
+        {
+            player: "black",
+            location: ["H", 2],
+            type: "knight",
+            hasMoved: false,
+        },
+        {
+            player: "black",
+            location: ["H", 7],
+            type: "knight",
+            hasMoved: false, 
+        }
+    ],
+    whiteKing: {
+        location: ["A",5],
+        inCheck: false,
+        canCastleRight: true,
+        canCastleLeft: true,
+    },
+    blackKing: {
+        location: ["H", 5],
+        inCheck: flase,
+        canCastleRight: true,        
+        canCastleLeft: true,
+    }
+    outcome: null | "white" | "black"
+},
+moveHistory: [
+    {
+        location: ["A", 5],
+        destination: ["B", 5]
+    },
+    {
+        location: ["H", 5],
+        destination: ["G", 5]
+    }
+]
