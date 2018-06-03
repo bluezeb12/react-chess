@@ -6,11 +6,54 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from './theme';
+import Board from '../../components/Board';
+
+const currentLayout = [
+  {
+      player: "white",
+      location: ["A", 5],
+      type: "king",
+      hasMoved: false,
+  },
+  {
+      player: "white",
+      location: ["A", 2],
+      type: "knight",
+      hasMoved: false,
+  },
+  {
+      player: "white",
+      location: ["A", 7],
+      type: "knight",
+      hasMoved: false,
+  },
+  {
+      player: "black",
+      location: ["H", 5],
+      type: "king",
+      hasMoved: false,
+  },
+  {
+      player: "black",
+      location: ["H", 2],
+      type: "knight",
+      hasMoved: false,
+  },
+  {
+      player: "black",
+      location: ["H", 7],
+      type: "knight",
+      hasMoved: false, 
+  }
+];
 
 class App extends Component {
   static propTypes = {
     store: PropTypes.object
   }
+
+  onClick = (location) => console.log("hello ",location[0], location[1]);
+
   render() {
     const { store } = this.props;
     return (
@@ -18,7 +61,7 @@ class App extends Component {
         <CssBaseline />
         <Provider store={store}>
            <MuiThemeProvider theme={theme}>
-              <div>PUT APPLICATION HERE</div>
+              <Board onClick={this.onClick} currentLayout={currentLayout}/>
             </MuiThemeProvider>
         </Provider>
       </React.Fragment>
